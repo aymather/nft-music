@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+body {
+    background-color: #000;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+}
+
+.img-container-wrap {
+    position: absolute;
+    height: 100% !important;
+    width: 100%;
+
+    .img-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & .img-container-tint {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            top: -4px;
+        }
+
+        & .bg {
+            position: relative;
+            top: -13px;
+            height: 71%;
+            filter: blur(20px);
+            // animation: blur-animation 3s ease-in-out infinite;
+        }
+    }
+}
+
+.title {
+    color: #fff;
+    font-family: 'Lato';
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    top: -40px;
+    right: -120px;
+    z-index: 10;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    width: 16px;
+    height: 16px;
+    animation: loading 50s linear infinite;
+}
+
+.vibrate {
+    animation: shake-animation 3s ease-in-out infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes shake-animation {
+    0% { transform:translate(0,0); .bg { filter: blur(2px); } }
+    1% { transform:translate(2px,0); .bg { filter: blur(3px); } }
+    2% { transform:translate(0,0); .bg { filter: blur(4px); } }
+    3% { transform:translate(2px,0); .bg { filter: blur(5px); } }
+    4% { transform:translate(0,0); .bg { filter: blur(6px); } }
+    5% { transform:translate(2px,0); .bg { filter: blur(7px); } }
+    6% { transform:translate(0,0); .bg { filter: blur(8px); } }
+    7% { transform:translate(2px,0); .bg { filter: blur(9px); } }
+    8% { transform:translate(0,0); .bg { filter: blur(10px); } }
+    9% { transform:translate(2px,0); .bg { filter: blur(10px); } }
+    10% { transform:translate(0,0); .bg { filter: blur(10px); } }
+    100% { transform:translate(0,0); .bg { filter: blur(3px); } }
+}
+
+// @keyframes blur-animation {
+//     0% { filter: blur(3px); }
+//     1% { filter: blur(4px); }
+//     2% { filter: blur(5px); }
+//     3% { filter: blur(6px); }
+//     4% { filter: blur(7px); }
+//     5% { filter: blur(8px); }
+//     6% { filter: blur(8px); }
+//     7% { filter: blur(8px); }
+//     8% { filter: blur(9px); }
+//     9% { filter: blur(10px); }
+//     10% { filter: blur(10px); }
+//     100% { filter: blur(3px); }
+// }
